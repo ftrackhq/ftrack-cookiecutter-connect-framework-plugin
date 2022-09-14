@@ -12,6 +12,7 @@ class {{cookiecutter.host_type_capitalized}}CameraPublisherValidatorPlugin(plugi
     plugin_name = '{{cookiecutter.host_type}}_camera_publisher_validator'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Return true if all the collected {{cookiecutter.host_type_capitalized}} node supplied with *data* are cameras'''
         if not data:
             return False
 

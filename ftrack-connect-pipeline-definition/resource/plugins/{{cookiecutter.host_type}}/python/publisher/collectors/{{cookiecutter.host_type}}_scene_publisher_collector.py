@@ -14,6 +14,7 @@ class {{cookiecutter.host_type_capitalized}}ScenePublisherCollectorPlugin(plugin
     plugin_name = '{{cookiecutter.host_type}}_scene_publisher_collector'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Collect {{cookiecutter.host_type_capitalized}} scene name, save to temp if unsaved'''
         export_option = options.get("export")
         if export_option and isinstance(export_option, list):
             export_option = export_option[0]

@@ -26,6 +26,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultLoaderImporterPlugin(plugin.{
         return {{cookiecutter.host_type}}_options
 
     def run(self, context_data=None, data=None, options=None):
+        '''Import collected objects provided with *data* into {{cookiecutter.host_type_capitalized}} based on *options*'''
         # cmds.loadPlugin('fbxmaya.so', qt=1)
         load_mode = options.get('load_mode', list(self.load_modes.keys())[0])
         load_options = options.get('load_options', {})

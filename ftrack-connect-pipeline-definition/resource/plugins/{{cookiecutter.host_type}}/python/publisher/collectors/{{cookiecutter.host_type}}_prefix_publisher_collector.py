@@ -11,6 +11,7 @@ class {{cookiecutter.host_type_capitalized}}PrefixPublisherCollectorPlugin(plugi
     plugin_name = '{{cookiecutter.host_type}}_prefix_publisher_collector'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Select and collect nodes matching prefix and suffix from *options*'''
         # cmds.select(cl=True)
         prefix = str(options['prefix'])
         suffix = str(options['sufix'])

@@ -14,6 +14,7 @@ class {{cookiecutter.host_type_capitalized}}RegexPublisherCollectorPlugin(plugin
     plugin_name = '{{cookiecutter.host_type}}_regex_publisher_collector'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Select and collect nodes matching regular expression from *options*'''
         expr = options['expression']
         # dag_objs = cmds.ls(ap=True, assemblies=True, dag=True)
         matched_objs = []

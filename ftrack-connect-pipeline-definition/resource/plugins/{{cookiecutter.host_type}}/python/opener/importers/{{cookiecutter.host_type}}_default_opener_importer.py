@@ -14,6 +14,8 @@ class {{cookiecutter.host_type_capitalized}}DefaultOpenerImporterPlugin(plugin.{
     plugin_name = '{{cookiecutter.host_type}}_default_opener_importer'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Open a {{cookiecutter.host_type_capitalized}} scene from path stored in collected object provided with *data*'''
+
         load_mode = load_const.OPEN_MODE
         load_mode_fn = self.load_modes.get(
             load_mode, list(self.load_modes.keys())[0]

@@ -11,6 +11,8 @@ class {{cookiecutter.host_type_capitalized}}DefaultOpenerFinalizerPlugin(plugin.
     plugin_name = '{{cookiecutter.host_type}}_default_opener_finalizer'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Save opened {{cookiecutter.host_type_capitalized}} scene in temp to avoid being overwritten'''
+
         result = {}
 
         self.logger.debug('Rename {{cookiecutter.host_type_capitalized}} scene on open')

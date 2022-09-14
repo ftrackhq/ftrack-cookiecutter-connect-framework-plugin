@@ -14,6 +14,8 @@ class {{cookiecutter.host_type_capitalized}}ThumbnailPublisherExporterPlugin(plu
     plugin_name = '{{cookiecutter.host_type}}_thumbnail_publisher_exporter'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Export a {{cookiecutter.host_type_capitalized}} thumbnail to a temp file for publish'''
+
         collected_objects = []
         for collector in data:
             collected_objects.extend(collector['result'])

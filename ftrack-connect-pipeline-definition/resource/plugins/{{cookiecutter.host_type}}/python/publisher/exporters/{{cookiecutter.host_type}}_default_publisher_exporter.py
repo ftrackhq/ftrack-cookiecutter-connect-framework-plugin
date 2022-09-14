@@ -35,9 +35,10 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterPlugin(plugi
         return main_options
 
     def run(self, context_data=None, data=None, options=None):
+        '''Export {{cookiecutter.host_type_capitalized}} objects to a temp file for publish'''
 
         self.file_type = options.get('type') or '{{cookiecutter.host_type}}Binary'
-        self.extension = '.mb' if self.file_type == '{{cookiecutter.host_type}}Binary' else '.ma'
+        self.extension = '.xx'
 
         new_file_path = tempfile.NamedTemporaryFile(
             delete=False, suffix=self.extension

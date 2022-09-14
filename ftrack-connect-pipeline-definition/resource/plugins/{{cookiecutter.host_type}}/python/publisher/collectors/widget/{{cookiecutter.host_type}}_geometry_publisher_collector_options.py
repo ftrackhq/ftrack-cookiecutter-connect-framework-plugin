@@ -10,6 +10,8 @@ import ftrack_api
 
 
 class {{cookiecutter.host_type_capitalized}}GeometryPublisherCollectorOptionsWidget(BaseCollectorWidget):
+    ''' {{cookiecutter.host_type_capitalized}} geometry collector widget plugin'''
+
     # Run fetch function on widget initialization
     auto_fetch_on_init = True
 

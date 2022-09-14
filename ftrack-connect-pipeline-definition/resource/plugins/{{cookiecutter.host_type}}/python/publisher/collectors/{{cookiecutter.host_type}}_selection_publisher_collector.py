@@ -14,6 +14,7 @@ class {{cookiecutter.host_type_capitalized}}SelectionPublisherCollectorPlugin(
     plugin_name = '{{cookiecutter.host_type}}_selection_publisher_collector'
 
     def run(self, context_data=None, data=None, options=None):
+        '''Collect selected {{cookiecutter.host_type_capitalized}} scene objects'''
         # selection = cmds.ls(sl=True)
         return selection
 

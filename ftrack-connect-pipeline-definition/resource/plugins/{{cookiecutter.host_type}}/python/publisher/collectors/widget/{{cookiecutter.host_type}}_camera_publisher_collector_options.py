@@ -12,6 +12,7 @@ import ftrack_api
 
 
 class {{cookiecutter.host_type_capitalized}}CameraPublisherCollectorOptionsWidget(BaseOptionsWidget):
+    ''' {{cookiecutter.host_type_capitalized}} camera collector widget plugin'''
     # Run fetch function on widget initialization
     auto_fetch_on_init = True
 

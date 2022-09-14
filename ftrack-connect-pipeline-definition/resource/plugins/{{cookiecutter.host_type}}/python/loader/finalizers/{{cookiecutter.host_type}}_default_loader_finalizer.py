@@ -11,6 +11,9 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}}.constants.asset import m
 class {{cookiecutter.host_type_capitalized}}DefaultLoaderFinalizerPlugin(plugin.{{cookiecutter.host_type_capitalized}}LoaderFinalizerPlugin):
     plugin_name = '{{cookiecutter.host_type}}_default_loader_finalizer'
 
+    def run(self, context_data=None, data=None, options=None):
+        '''Empty finalizer'''
+        return {}
 
 def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):

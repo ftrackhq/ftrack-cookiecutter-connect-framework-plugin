@@ -10,6 +10,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherFinalizerPlugin(plug
     plugin_name = '{{cookiecutter.host_type}}_default_publisher_finalizer'
 
     def run(self, context_data=None, data=None, options=None):
+        '''{{cookiecutter.host_type_capitalized}} finalizer plugin'''
         return {}
 
 

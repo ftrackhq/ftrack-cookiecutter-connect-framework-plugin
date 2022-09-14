@@ -13,6 +13,7 @@ import ftrack_api
 
 
 class {{cookiecutter.host_type_capitalized}}DefaultLoaderImporterOptionsWidget(LoadBaseWidget):
+    '''{{cookiecutter.host_type_capitalized}} loader plugin widget'''
     load_modes = list(load_const.LOAD_MODES.keys())
 
     def __init__(
