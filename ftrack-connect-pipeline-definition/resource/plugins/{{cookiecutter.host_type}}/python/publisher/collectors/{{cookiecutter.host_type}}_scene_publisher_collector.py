@@ -14,7 +14,9 @@ class {{cookiecutter.host_type_capitalized}}ScenePublisherCollectorPlugin(plugin
     plugin_name = '{{cookiecutter.host_type}}_scene_publisher_collector'
 
     def run(self, context_data=None, data=None, options=None):
-        export_option = options.get("export", 'scene')
+        export_option = options.get("export")
+        if export_option and isinstance(export_option, list):
+            export_option = export_option[0]
         if export_option == 'scene':
             # scene_name = cmds.file(q=True, sceneName=True)
             if len(scene_name or '') == 0:
