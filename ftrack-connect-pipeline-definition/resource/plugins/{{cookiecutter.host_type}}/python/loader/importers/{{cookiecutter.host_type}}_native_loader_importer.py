@@ -10,8 +10,8 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}}.constants.asset import m
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultLoaderImporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}LoaderImporterPlugin):
-    plugin_name = '{{cookiecutter.host_type}}_default_loader_importer'
+class {{cookiecutter.host_type_capitalized}}NativeLoaderImporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}LoaderImporterPlugin):
+    plugin_name = '{{cookiecutter.host_type}}_native_loader_importer'
 
     load_modes = load_const.LOAD_MODES
 
@@ -64,5 +64,5 @@ def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultLoaderImporterPlugin(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}NativeLoaderImporterPlugin(api_object)
     plugin.register()

@@ -12,7 +12,7 @@ from Qt import QtWidgets, QtCore
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidget(DynamicWidget):
+class {{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsWidget(DynamicWidget):
     def __init__(
         self,
         parent=None,
@@ -27,7 +27,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidge
 
         self.options_cb = {}
 
-        super({{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidget, self).__init__(
+        super({{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsWidget, self).__init__(
             parent=parent,
             session=session,
             data=data,
@@ -67,7 +67,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidge
         self._options = options
 
         # Call the super build to automatically generate the options
-        super({{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidget, self).build()
+        super({{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsWidget, self).build()
 
         self.layout().addWidget(self.option_group)
 
@@ -84,7 +84,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidge
         self.option_layout.addLayout(widget_layout)
 
     def post_build(self):
-        super({{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidget, self).post_build()
+        super({{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsWidget, self).post_build()
 
         self.file_type_combo.currentIndexChanged.connect(
             self._on_file_type_set
@@ -95,16 +95,16 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidge
         self.set_option_result(value.split(' ')[0], 'type')
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsPluginWidget(
+class {{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsPluginWidget(
     plugin.{{cookiecutter.host_type_capitalized}}PublisherExporterPluginWidget
 ):
-    plugin_name = '{{cookiecutter.host_type}}_default_publisher_exporter'
-    widget = {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsWidget
+    plugin_name = '{{cookiecutter.host_type}}_native_publisher_exporter'
+    widget = {{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsWidget
 
 
 def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterOptionsPluginWidget(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}NativePublisherExporterOptionsPluginWidget(api_object)
     plugin.register()

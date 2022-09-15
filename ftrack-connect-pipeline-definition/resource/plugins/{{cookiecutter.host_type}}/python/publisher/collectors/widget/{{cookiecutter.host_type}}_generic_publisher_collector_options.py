@@ -9,7 +9,7 @@ from ftrack_connect_pipeline_qt.plugin.widgets.base_collector_widget import (
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorOptionsWidget(BaseCollectorWidget):
+class {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorOptionsWidget(BaseCollectorWidget):
     ''' {{cookiecutter.host_type_capitalized}} collector widget plugin'''
 
     # Run fetch function on widget initialization
@@ -26,7 +26,7 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorOptionsWidg
         context_id=None,
         asset_type_name=None,
     ):
-        super({{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorOptionsWidget, self).__init__(
+        super({{cookiecutter.host_type_capitalized}}GenericPublisherCollectorOptionsWidget, self).__init__(
             parent=parent,
             session=session,
             data=data,
@@ -38,16 +38,16 @@ class {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorOptionsWidg
         )
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorPluginWidget(
+class {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorPluginWidget(
     plugin.{{cookiecutter.host_type_capitalized}}PublisherCollectorPluginWidget
 ):
-    plugin_name = '{{cookiecutter.host_type}}_default_publisher_collector'
-    widget = {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorOptionsWidget
+    plugin_name = '{{cookiecutter.host_type}}_generic_publisher_collector'
+    widget = {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorOptionsWidget
 
 
 def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorPluginWidget(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorPluginWidget(api_object)
     plugin.register()

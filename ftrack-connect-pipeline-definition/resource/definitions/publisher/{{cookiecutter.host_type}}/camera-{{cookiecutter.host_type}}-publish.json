@@ -51,8 +51,8 @@
           "plugins":[
             {
               "name": "{{cookiecutter.host_type}}",
-              "plugin": "{{cookiecutter.host_type}}_default_publisher_exporter",
-              "widget": "{{cookiecutter.host_type}}_default_publisher_exporter"
+              "plugin": "{{cookiecutter.host_type}}_native_publisher_exporter",
+              "widget": "{{cookiecutter.host_type}}_native_publisher_exporter"
             }
           ]
         }
@@ -85,8 +85,8 @@
           "plugins":[
             {
               "name": "output_{{cookiecutter.host_type}}",
-              "plugin": "{{cookiecutter.host_type}}_default_publisher_exporter",
-              "widget": "{{cookiecutter.host_type}}_default_publisher_exporter"
+              "plugin": "{{cookiecutter.host_type}}_native_publisher_exporter",
+              "widget": "{{cookiecutter.host_type}}_native_publisher_exporter"
             }
           ]
         }

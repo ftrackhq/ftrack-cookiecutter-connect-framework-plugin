@@ -10,8 +10,8 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}}.constants.asset import m
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultOpenerImporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}OpenerImporterPlugin):
-    plugin_name = '{{cookiecutter.host_type}}_default_opener_importer'
+class {{cookiecutter.host_type_capitalized}}NativeOpenerImporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}OpenerImporterPlugin):
+    plugin_name = '{{cookiecutter.host_type}}_native_opener_importer'
 
     def run(self, context_data=None, data=None, options=None):
         '''Open a {{cookiecutter.host_type_capitalized}} scene from path stored in collected object provided with *data*'''
@@ -43,5 +43,5 @@ def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultOpenerImporterPlugin(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}NativeOpenerImporterPlugin(api_object)
     plugin.register()

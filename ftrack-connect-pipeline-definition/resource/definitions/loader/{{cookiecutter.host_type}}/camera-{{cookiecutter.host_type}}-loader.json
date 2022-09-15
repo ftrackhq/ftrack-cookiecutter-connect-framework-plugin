@@ -40,7 +40,7 @@
           "plugins":[
             {
               "name": "Import paths to {{cookiecutter.host_type_capitalized}}",
-              "plugin": "{{cookiecutter.host_type}}_default_loader_importer",
+              "plugin": "{{cookiecutter.host_type}}_native_loader_importer",
               "options": {
                 "load_mode": "import",
                 "load_options": {
@@ -81,7 +81,7 @@
           "plugins":[
             {
               "name": "Import paths to {{cookiecutter.host_type_capitalized}}",
-              "plugin": "{{cookiecutter.host_type}}_default_loader_importer",
+              "plugin": "{{cookiecutter.host_type}}_native_loader_importer",
               "options": {
                 "load_mode": "import",
                 "load_options": {

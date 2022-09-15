@@ -11,8 +11,8 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}} import plugin
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}PublisherExporterPlugin):
-    plugin_name = '{{cookiecutter.host_type}}_default_publisher_exporter'
+class {{cookiecutter.host_type_capitalized}}NativePublisherExporterPlugin(plugin.{{cookiecutter.host_type_capitalized}}PublisherExporterPlugin):
+    plugin_name = '{{cookiecutter.host_type}}_native_publisher_exporter'
 
     extension = None
     file_type = None
@@ -86,5 +86,5 @@ def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    output_plugin = {{cookiecutter.host_type_capitalized}}DefaultPublisherExporterPlugin(api_object)
+    output_plugin = {{cookiecutter.host_type_capitalized}}NativePublisherExporterPlugin(api_object)
     output_plugin.register()

@@ -7,8 +7,8 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}} import plugin
 import ftrack_api
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorPlugin(plugin.{{cookiecutter.host_type_capitalized}}PublisherCollectorPlugin):
-    plugin_name = '{{cookiecutter.host_type}}_default_publisher_collector'
+class {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorPlugin(plugin.{{cookiecutter.host_type_capitalized}}PublisherCollectorPlugin):
+    plugin_name = '{{cookiecutter.host_type}}_generic_publisher_collector'
 
     def select(self, context_data=None, data=None, options=None):
         '''Select all the items of the plugin *options*'''
@@ -39,5 +39,5 @@ def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultPublisherCollectorPlugin(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}GenericPublisherCollectorPlugin(api_object)
     plugin.register()

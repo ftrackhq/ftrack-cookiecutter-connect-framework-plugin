@@ -40,7 +40,7 @@
           "plugins":[
             {
               "name": "Open {{cookiecutter.host_type_capitalized}} Scene",
-              "plugin": "{{cookiecutter.host_type}}_default_opener_importer",
+              "plugin": "{{cookiecutter.host_type}}_native_opener_importer",
               "options": {
               }
             }
@@ -75,7 +75,7 @@
           "plugins":[
             {
               "name": "Open {{cookiecutter.host_type_capitalized}} Scene",
-              "plugin": "{{cookiecutter.host_type}}_default_opener_importer",
+              "plugin": "{{cookiecutter.host_type}}_native_opener_importer",
               "options": {
               }
             }
