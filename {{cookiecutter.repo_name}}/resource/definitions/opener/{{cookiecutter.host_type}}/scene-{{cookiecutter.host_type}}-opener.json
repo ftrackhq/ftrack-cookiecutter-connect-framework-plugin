@@ -78,7 +78,7 @@
             {
               "name": "Rename scene",
               "description" : "Upon open, rename {{cookiecutter.host_type_capitalized}} scene to local temp directory",
-              "plugin": "{{cookiecutter.host_type}}_default_opener_finalizer"
+              "plugin": "{{cookiecutter.host_type}}_native_opener_finalizer"
             }
           ]
         },

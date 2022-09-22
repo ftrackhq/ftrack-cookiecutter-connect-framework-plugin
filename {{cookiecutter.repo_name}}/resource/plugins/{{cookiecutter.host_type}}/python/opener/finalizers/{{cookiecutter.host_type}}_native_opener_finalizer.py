@@ -7,8 +7,8 @@ from ftrack_connect_pipeline_{{cookiecutter.host_type}} import plugin
 from ftrack_connect_pipeline_{{cookiecutter.host_type}}.utils import custom_commands as {{cookiecutter.host_type}}_utils
 
 
-class {{cookiecutter.host_type_capitalized}}DefaultOpenerFinalizerPlugin(plugin.{{cookiecutter.host_type_capitalized}}OpenerFinalizerPlugin):
-    plugin_name = '{{cookiecutter.host_type}}_default_opener_finalizer'
+class {{cookiecutter.host_type_capitalized}}NativeOpenerFinalizerPlugin(plugin.{{cookiecutter.host_type_capitalized}}OpenerFinalizerPlugin):
+    plugin_name = '{{cookiecutter.host_type}}_native_opener_finalizer'
 
     def run(self, context_data=None, data=None, options=None):
         '''Save opened {{cookiecutter.host_type_capitalized}} scene in temp to avoid being overwritten'''
@@ -31,5 +31,5 @@ def register(api_object, **kw):
     if not isinstance(api_object, ftrack_api.Session):
         # Exit to avoid registering this plugin again.
         return
-    plugin = {{cookiecutter.host_type_capitalized}}DefaultOpenerFinalizerPlugin(api_object)
+    plugin = {{cookiecutter.host_type_capitalized}}NativeOpenerFinalizerPlugin(api_object)
     plugin.register()
