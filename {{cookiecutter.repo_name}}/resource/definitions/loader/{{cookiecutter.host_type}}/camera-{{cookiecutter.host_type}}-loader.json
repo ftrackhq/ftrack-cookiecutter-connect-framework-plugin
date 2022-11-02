@@ -180,11 +180,11 @@
       "name": "main",
       "stages": [
         {
-          "name": "Pre finalizer",
+          "name": "pre_finalizer",
           "visible": false,
           "plugins":[
             {
-              "name": "pre to ftrack server",
+              "name": "Pre finalizer",
               "plugin": "common_passthrough_loader_pre_finalizer"
             }
           ]
