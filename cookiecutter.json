@@ -1,9 +1,10 @@
 {
+    "plugin_name": "pluginname",
     "project_name": "ftrack Connect framework integration definition",
     "package_name": "ftrack_connect_pipeline_definition",
     "repo_name": "ftrack-connect-pipeline-definition",
-    "host_type": "pluginname",
-    "host_type_capitalized": "Pluginname",
+    "host_type": "{{ cookiecutter.plugin_name }}",
+    "host_type_capitalized": "{{ cookiecutter.plugin_name.capitalize() }}",
     "description": "A ftrack framework integration definition.",
     "year": "2022",
     "version": "1.0.0",
